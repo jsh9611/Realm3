@@ -19,7 +19,7 @@
 		11F248242858C4C900DA595B /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F248232858C4C900DA595B /* FoodView.swift */; };
 		11F248262858C58000DA595B /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F248252858C58000DA595B /* DataFactory.swift */; };
 		11F248282858CE2F00DA595B /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F248272858CE2F00DA595B /* RealmModel.swift */; };
-		11F2482D2859C6D300DA595B /* sampleData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 11F2482C2859C6D300DA595B /* sampleData.csv */; };
+		11F248312859CAC900DA595B /* sampleData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 11F248302859CAC900DA595B /* sampleData.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		11F248232858C4C900DA595B /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
 		11F248252858C58000DA595B /* DataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		11F248272858CE2F00DA595B /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
-		11F2482C2859C6D300DA595B /* sampleData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sampleData.csv; path = ../../../../Downloads/sampleData.csv; sourceTree = "<group>"; };
+		11F248302859CAC900DA595B /* sampleData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleData.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 				11F248252858C58000DA595B /* DataFactory.swift */,
 				11F248272858CE2F00DA595B /* RealmModel.swift */,
 				11F247F32858AC8E00DA595B /* Assets.xcassets */,
-				11F2482C2859C6D300DA595B /* sampleData.csv */,
+				11F248302859CAC900DA595B /* sampleData.csv */,
 				11F247F52858AC8E00DA595B /* Preview Content */,
 			);
 			path = Realm3;
@@ -254,7 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11F2482D2859C6D300DA595B /* sampleData.csv in Resources */,
+				11F248312859CAC900DA595B /* sampleData.csv in Resources */,
 				11F247F72858AC8E00DA595B /* Preview Assets.xcassets in Resources */,
 				11F247F42858AC8E00DA595B /* Assets.xcassets in Resources */,
 			);

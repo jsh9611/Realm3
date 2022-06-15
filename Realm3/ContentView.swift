@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+// SPM으로 설치하세용: https://github.com/realm/realm-swift.git
 
 struct ContentView: View {
     @AppStorage("isFirstLaunch") private var isFirstLaunch: Bool = true
@@ -41,7 +42,7 @@ struct ContentView: View {
                 .padding()
                 
                 Button {
-                    print(yyyyMMdd())
+                    print(todayString())
                 } label: {
                     Text("오늘 날짜 출력")
                         .fontWeight(.bold)
@@ -56,6 +57,7 @@ struct ContentView: View {
         .onAppear {
             // 앱을 처음 실행했을 때만 csv를 불러온다
             if isFirstLaunch {
+                print("앱을 처음 실행하시네요. csv 불러옵니다")
                 csvToRealm()
                 isFirstLaunch = false
             }
