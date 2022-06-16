@@ -20,6 +20,12 @@
 		11F248262858C58000DA595B /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F248252858C58000DA595B /* DataFactory.swift */; };
 		11F248282858CE2F00DA595B /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F248272858CE2F00DA595B /* RealmModel.swift */; };
 		11F248312859CAC900DA595B /* sampleData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 11F248302859CAC900DA595B /* sampleData.csv */; };
+		11F248382859E7B800DA595B /* IntakeAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F248372859E7B800DA595B /* IntakeAmountView.swift */; };
+		11F2483A2859E91E00DA595B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F248392859E91E00DA595B /* MainView.swift */; };
+		11F2483C2859E96100DA595B /* RecordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2483B2859E96100DA595B /* RecordRow.swift */; };
+		11F2483E2859EB1600DA595B /* TempContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2483D2859EB1600DA595B /* TempContentView.swift */; };
+		11F24840285A323B00DA595B /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2483F285A323B00DA595B /* UIApplication.swift */; };
+		11F24842285ADACA00DA595B /* TextFieldBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F24841285ADACA00DA595B /* TextFieldBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		11F248252858C58000DA595B /* DataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		11F248272858CE2F00DA595B /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		11F248302859CAC900DA595B /* sampleData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleData.csv; sourceTree = "<group>"; };
+		11F248372859E7B800DA595B /* IntakeAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeAmountView.swift; sourceTree = "<group>"; };
+		11F248392859E91E00DA595B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		11F2483B2859E96100DA595B /* RecordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRow.swift; sourceTree = "<group>"; };
+		11F2483D2859EB1600DA595B /* TempContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempContentView.swift; sourceTree = "<group>"; };
+		11F2483F285A323B00DA595B /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		11F24841285ADACA00DA595B /* TextFieldBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +119,17 @@
 			isa = PBXGroup;
 			children = (
 				11F247EF2858AC8D00DA595B /* Realm3App.swift */,
+				11F2483D2859EB1600DA595B /* TempContentView.swift */,
 				11F247F12858AC8D00DA595B /* ContentView.swift */,
+				11F248392859E91E00DA595B /* MainView.swift */,
+				11F2483B2859E96100DA595B /* RecordRow.swift */,
 				11F248192858AF5600DA595B /* Realm.swift */,
 				11F248232858C4C900DA595B /* FoodView.swift */,
 				11F248252858C58000DA595B /* DataFactory.swift */,
 				11F248272858CE2F00DA595B /* RealmModel.swift */,
+				11F248372859E7B800DA595B /* IntakeAmountView.swift */,
+				11F24841285ADACA00DA595B /* TextFieldBox.swift */,
+				11F2483F285A323B00DA595B /* UIApplication.swift */,
 				11F247F32858AC8E00DA595B /* Assets.xcassets */,
 				11F248302859CAC900DA595B /* sampleData.csv */,
 				11F247F52858AC8E00DA595B /* Preview Content */,
@@ -282,11 +300,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F247F22858AC8D00DA595B /* ContentView.swift in Sources */,
+				11F2483A2859E91E00DA595B /* MainView.swift in Sources */,
 				11F248282858CE2F00DA595B /* RealmModel.swift in Sources */,
+				11F24842285ADACA00DA595B /* TextFieldBox.swift in Sources */,
+				11F24840285A323B00DA595B /* UIApplication.swift in Sources */,
 				11F248242858C4C900DA595B /* FoodView.swift in Sources */,
+				11F2483E2859EB1600DA595B /* TempContentView.swift in Sources */,
 				11F248262858C58000DA595B /* DataFactory.swift in Sources */,
+				11F248382859E7B800DA595B /* IntakeAmountView.swift in Sources */,
 				11F247F02858AC8D00DA595B /* Realm3App.swift in Sources */,
 				11F2481A2858AF5600DA595B /* Realm.swift in Sources */,
+				11F2483C2859E96100DA595B /* RecordRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
