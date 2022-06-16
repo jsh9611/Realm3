@@ -45,13 +45,13 @@ struct IntakeAmountView: View {
     //  TODO: serving과 연결해서 계산해야 함 (제품당 단위 ex. 음료1캔=190ml)
     let servingCategory = ["1/3컵", "1/2컵", "1컵", "2컵", "3컵", "직접입력"]
     let categoryRate : [Double] = [0.333, 0.5, 1, 2, 3, -1] // 계산하기 쉽도록 테이블 작성
-    @State var isSelected = [true, false, false, false, false, false]  // 0번이 디폴트로 눌리게 설정
+    @State var isSelected = [false, false, false, false, false, false]  // 0번이 디폴트로 눌리게 설정
     @State private var showingAlert = false // 0 g/ml 입력하면 뜨게 하는 용도
     //  TODO: 데이터베이스로부터 제품 1g당 당류 불러오기 (=sugarAmount)
     var sugarAmount = 0.37
     
     @State var serving : Double = 0 // serving: 섭취량 -> 섭취량도 저장해야하는지
-    @State var buttonState : Int = 0    // 현재 선택한 카테고리명
+    @State var buttonState : Int = 2    // 현재 선택한 카테고리명
     
     var body: some View {
         VStack{
@@ -140,11 +140,12 @@ struct IntakeAmountView: View {
                                     .lineLimit(1)
                                 Spacer()
                             }
-                                
+                            
                             
                             HStack {
                                 VStack (alignment: .leading){
-                                    Text("당류 \(String(format: "%.2f", sugarAmount))g")
+                                    //                                    Text("당류 \(String(format: "%.2f", sugarAmount))g")
+                                    Text("당류 \(String(format: "%.1f", serving*sugarAmount))g(ml)")
                                         .font(.title2)
                                         .fontWeight(.bold)
                                     HStack {
@@ -160,26 +161,26 @@ struct IntakeAmountView: View {
                                                 TextField("200",
                                                           value: $serving,
                                                           formatter: formatter)
-                                                    .frame(height: 60)
-                                                    .padding(.leading, 10)
-                                                    .focused($isFocused)    // 텍스트필드를 바라보도록 활성화
-                                                    .keyboardType(.numberPad)
+                                                .frame(height: 60)
+                                                .padding(.leading, 10)
+                                                .focused($isFocused)    // 텍스트필드를 바라보도록 활성화
+                                                .keyboardType(.numberPad)
                                                 .font(.title2)
-
+                                                
                                                 Text("ml")
                                                     .font(.title2)
                                                     .fontWeight(.bold)
                                                     .padding(.trailing, 5)
                                                 Spacer()
                                             }
-
+                                            
                                         }.frame(width: 110, height: 60)
                                         
                                     }
                                     
                                     
                                 }
-//                                .padding(.leading, 20)
+                                //                                .padding(.leading, 20)
                                 Spacer()
                                 Image(systemName: "takeoutbag.and.cup.and.straw")
                                     .resizable()
@@ -190,7 +191,7 @@ struct IntakeAmountView: View {
                         }
                         .foregroundColor(.white)
                         .padding(.horizontal, 20)
-
+                        
                         
                     }
                 }
@@ -219,9 +220,9 @@ struct IntakeAmountView: View {
                     }
                     .frame(width: 110, height: 60)
                     .background(RoundedRectangle(cornerRadius: 15)
-                    .fill(self.isSelected[num] ? Color(hex: 0x6CADA5) : Color.white)
-                    .shadow(color: .black.opacity(0.2), radius: 10, x: 10, y: 10)
-                    .shadow(color: .white.opacity(0.7), radius: 10, x: -5, y: -5)
+                        .fill(self.isSelected[num] ? Color(hex: 0x6CADA5) : Color.white)
+                        .shadow(color: .black.opacity(0.2), radius: 10, x: 10, y: 10)
+                        .shadow(color: .white.opacity(0.7), radius: 10, x: -5, y: -5)
                                 
                     )
                 }
@@ -240,7 +241,7 @@ struct IntakeAmountView: View {
                         .fontWeight(.bold)
                         .padding()
                         .foregroundColor(Color(hex: 0x6CADA5))
-                        
+                    
                 }
                 .frame(width: 110, height: 60)
                 .background(RoundedRectangle(cornerRadius: 15)
@@ -249,20 +250,21 @@ struct IntakeAmountView: View {
                     .shadow(color: .white.opacity(0.7), radius: 10, x: -5, y: -5))
                 .overlay(RoundedRectangle(cornerRadius: 15)
                     .stroke(self.isFocused ? Color(hex: 0x6CADA5) : Color.clear, lineWidth: 2))
- 
+                
             }
             .padding(.top, 10)
             .padding(.horizontal, 10)
             // 등장과 동시에 serving에 값을 넣어준다.(디폴트로 선택한 0번 버튼의 값이 들어감)
             .onAppear {
+                isSelected[buttonState].toggle()
                 serving = Double(String(format: "%.0f", categoryRate[buttonState] * Double(unitVolum)!)) ?? 0
             }
             
             Spacer()
             Button {
                 
-                print(serving, "ml 입력받음")
-                print(serving*sugarAmount, "g 설탕을 입력하기")
+                print(serving, "ml 입력받았어요")
+                print(serving*sugarAmount, "g 설탕을 저장했어요")
                 
                 if serving <= 0 || serving > 10000 {
                     showingAlert.toggle()
@@ -270,19 +272,24 @@ struct IntakeAmountView: View {
                     saveRecord()
                 }
                 
-//                // TODO: pop to Root
-//                                UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
+                //                // TODO: pop to Root
+                //                                UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
             } label: {
-                Text("당 \(String(format: "%.1f", serving*sugarAmount))g 추가하기")
+                //                Text("당 \(String(format: "%.1f", serving*sugarAmount))g 추가하기")
+                Text("추가하기")
                     .frame(width: (UIScreen.main.bounds.width)*0.9, height: 56)
                     .foregroundColor(Color.white)
-//                    .padding(.horizontal, 40)
+                //                    .padding(.horizontal, 40)
             }
             
             
             .background(RoundedRectangle(cornerRadius: 30).fill(Color(hex: 0x6CADA5)))
             .alert("범위 초과", isPresented: $showingAlert) {
-                Button("넹~~") { print("힝") }
+                Button("넹~~") {
+                    print("힝")
+                    isFocused.toggle()
+                    serving = Double(unitVolum) ?? 0
+                }
             } message: {
                 Text("0~10000 사이의 값을 입력해주세용")
             }
