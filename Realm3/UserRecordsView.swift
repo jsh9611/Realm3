@@ -13,7 +13,7 @@ struct UserRecordsView: View {
     var body: some View {
         List {
             ForEach(temp) { item in
-                Text("\(item.small)먹음 \(item.caculatedSugar)설탕이넹")
+                Text("\(item.small)먹음 \(item.caculatedSugar)설탕, \(item.unit)입니다.")
             }
         }
     }

@@ -45,6 +45,7 @@ struct User: Identifiable {
     var small: String = ""
     var caculatedSugar: String = ""
     var foodAmount: String = ""
+    var unit: String = ""
     var uuid = UUID()
     var date: String = todayString()
     
@@ -55,6 +56,7 @@ struct User: Identifiable {
         small = raw[3]
         caculatedSugar = raw[4]
         foodAmount = raw[5]
+        unit = raw[6]
     }
 }
 // csv 파일명("sample")을 받아와서 [User]로 반환
