@@ -26,6 +26,8 @@
 		11F2483E2859EB1600DA595B /* TempContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2483D2859EB1600DA595B /* TempContentView.swift */; };
 		11F24840285A323B00DA595B /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2483F285A323B00DA595B /* UIApplication.swift */; };
 		11F24842285ADACA00DA595B /* TextFieldBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F24841285ADACA00DA595B /* TextFieldBox.swift */; };
+		11F24844285CA43D00DA595B /* UserRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F24843285CA43D00DA595B /* UserRecordsView.swift */; };
+		11F24846285CA9FB00DA595B /* userDumyData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 11F24845285CA9FB00DA595B /* userDumyData.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		11F2483D2859EB1600DA595B /* TempContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempContentView.swift; sourceTree = "<group>"; };
 		11F2483F285A323B00DA595B /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		11F24841285ADACA00DA595B /* TextFieldBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBox.swift; sourceTree = "<group>"; };
+		11F24843285CA43D00DA595B /* UserRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordsView.swift; sourceTree = "<group>"; };
+		11F24845285CA9FB00DA595B /* userDumyData.csv */ = {isa = PBXFileReference; lastKnownFileType = file; path = userDumyData.csv; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				11F247EF2858AC8D00DA595B /* Realm3App.swift */,
+				11F24843285CA43D00DA595B /* UserRecordsView.swift */,
 				11F2483D2859EB1600DA595B /* TempContentView.swift */,
 				11F247F12858AC8D00DA595B /* ContentView.swift */,
 				11F248392859E91E00DA595B /* MainView.swift */,
@@ -130,6 +135,7 @@
 				11F248372859E7B800DA595B /* IntakeAmountView.swift */,
 				11F24841285ADACA00DA595B /* TextFieldBox.swift */,
 				11F2483F285A323B00DA595B /* UIApplication.swift */,
+				11F24845285CA9FB00DA595B /* userDumyData.csv */,
 				11F247F32858AC8E00DA595B /* Assets.xcassets */,
 				11F248302859CAC900DA595B /* sampleData.csv */,
 				11F247F52858AC8E00DA595B /* Preview Content */,
@@ -274,6 +280,7 @@
 			files = (
 				11F248312859CAC900DA595B /* sampleData.csv in Resources */,
 				11F247F72858AC8E00DA595B /* Preview Assets.xcassets in Resources */,
+				11F24846285CA9FB00DA595B /* userDumyData.csv in Resources */,
 				11F247F42858AC8E00DA595B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +318,7 @@
 				11F247F02858AC8D00DA595B /* Realm3App.swift in Sources */,
 				11F2481A2858AF5600DA595B /* Realm.swift in Sources */,
 				11F2483C2859E96100DA595B /* RecordRow.swift in Sources */,
+				11F24844285CA43D00DA595B /* UserRecordsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

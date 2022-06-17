@@ -35,6 +35,60 @@ struct Food: Identifiable {
         totalSugar = raw[8]
     }
 }
+//id,large,medium,small,caculatedSugar,foodAmount,
+//30179,음료,두유,가공두유,5.3,230,
+
+struct User: Identifiable {
+    var id = ""
+    var large: String = ""
+    var medium: String = ""
+    var small: String = ""
+    var caculatedSugar: String = ""
+    var foodAmount: String = ""
+    var uuid = UUID()
+    var date: String = todayString()
+    
+    init (raw: [String]) {
+        id = raw[0]
+        large = raw[1]
+        medium = raw[2]
+        small = raw[3]
+        caculatedSugar = raw[4]
+        foodAmount = raw[5]
+    }
+}
+// csv 파일명("sample")을 받아와서 [User]로 반환
+func loadDumyRecord(from csvName: String) -> [User] {
+    var csvToStruct = [User]()
+    
+    guard let filePath = Bundle.main.path(forResource: csvName, ofType: "csv") else {
+        return[]
+    }
+    
+    var data = ""
+    do {
+        data = try String(contentsOfFile: filePath)
+    } catch {
+        print(error)
+        return[]
+    }
+    // 맨 첫줄 삭제
+    var rows = data.components(separatedBy: "\n")
+    
+    let columnCount = rows.first?.components(separatedBy: ",").count
+    rows.removeFirst()
+    
+    for row in rows {
+        let csvColumns = row.components(separatedBy: ",")
+        if csvColumns.count == columnCount {
+            let userStruct = User.init(raw: csvColumns)
+            csvToStruct.append(userStruct)
+        }
+    }
+
+    return csvToStruct
+}
+
 
 // csv 파일명("sample")을 받아와서 [Food]로 반환
 func loadCSV(from csvName: String) -> [Food] {
